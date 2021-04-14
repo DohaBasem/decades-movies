@@ -1,0 +1,3 @@
+include ':baseArchitecture'
+include ':app'
+rootProject.name = "DecadeOfMovies"
