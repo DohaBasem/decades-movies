@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DecadeOfMovies</string>
+    <string name="msg_error">An error has occurred</string>
 </resources>

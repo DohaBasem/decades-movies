@@ -1,4 +1,4 @@
-package com.robustastudio.decadeofmovies
+package com.task.decadeofmovies
 
 import org.junit.Test
 

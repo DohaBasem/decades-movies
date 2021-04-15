@@ -1,4 +1,5 @@
-package com.robustastudio.base.helpers
+package com.task.base.helpers
 
 interface ILoggingHelper {
+    fun logMessage(tag: String, message: String)
 }

@@ -1,4 +1,4 @@
-package com.robustastudio.base
+package com.task.base
 
 import org.junit.Test
 
