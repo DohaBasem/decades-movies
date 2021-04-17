@@ -1,4 +1,5 @@
 object Dependencies {
+
     //Dependency injection dependencies
     const val koin_core = "org.koin:koin-core:${Versions.koin_core}"
     const val koin_android = "org.koin:koin-android:${Versions.koin_core}"
@@ -7,4 +8,22 @@ object Dependencies {
     //Rx dependencies
     const val rx_java3 = "io.reactivex.rxjava3:rxjava:${Versions.rx_java3}"
     const val rx_android3 = "io.reactivex.rxjava3:rxandroid:${Versions.rx_android3}"
+
+    //Rest service dependencies
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofit_rx_java3_adapter =
+        "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    const val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+
+    //Navigation
+    const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    const val navigation_ui = "androidx.navigation:navigation-ui-ktx:2.3.5"
+
+    //Room dependencies
+    const val room = "androidx.room:room-runtime:${Versions.room}"
+    const val room_annotation = "androidx.room:room-compiler:${Versions.room}"
+    const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
+    const val room_rxjava3_support = "androidx.room:room-rxjava3:${Versions.room}"
+    const val room_test_helper = "androidx.room:room-testing:${Versions.room}"
+
 }

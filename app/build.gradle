@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -21,6 +23,24 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "serverMode"
+    productFlavors {
+        mock {
+            dimension "serverMode"
+            resValue "string", "app_name", "DecadeOfMovies(Mock)"
+            buildConfigField("String", "BASE_URL", "\"https://private-e5d2fb-moviedecades.apiary-mock.com\"")
+        }
+        staging {
+            dimension "serverMode"
+            resValue "string", "app_name", "DecadeOfMovies(staging)"
+            buildConfigField("String", "BASE_URL", "\"\"")
+        }
+        production {
+            dimension "serverMode"
+            resValue "string", "app_name", "DecadeOfMovies"
+            buildConfigField("String", "BASE_URL", "\"\"")
         }
     }
     compileOptions {
@@ -49,6 +69,21 @@ dependencies {
     //Rx
     implementation Dependencies.rx_android3
     implementation Dependencies.rx_java3
+
+    //Retrofit
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_rx_java3_adapter
+    implementation Dependencies.retrofit_gson_converter
+
+    //Navigation
+    implementation Dependencies.navigation_fragment
+    implementation Dependencies.navigation_ui
+
+    //Room db
+    implementation Dependencies.room
+    kapt Dependencies.room_annotation
+    implementation Dependencies.room_ktx
+    implementation Dependencies.room_rxjava3_support
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

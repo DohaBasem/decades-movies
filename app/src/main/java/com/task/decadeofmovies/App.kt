@@ -1,6 +1,7 @@
 package com.task.decadeofmovies
 
 import android.app.Application
+import com.task.decadeofmovies.common.di.getKoinModules
 import com.task.decadeofmovies.common.di.helpersModules
 import com.task.decadeofmovies.common.di.reposModules
 import com.task.decadeofmovies.common.di.viewModelModules
@@ -18,8 +19,5 @@ class App : Application() {
         }
     }
 
-    private fun getKoinModules(): List<Module> {
-        return listOf<Module>(viewModelModules, reposModules, helpersModules)
-    }
 
 }

@@ -12,5 +12,9 @@ object Versions {
     const val koin_core = "2.2.0-beta-1"
     const val rx_java3 = "3.0.12"
     const val rx_android3 = "3.0.0"
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.9.0"
+    const val room = "2.3.0-alpha02" //This alpha version for room is used to support rxJava3
+
 
 }
