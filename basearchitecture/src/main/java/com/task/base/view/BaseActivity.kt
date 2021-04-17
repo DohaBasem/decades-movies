@@ -1,6 +1,8 @@
 package com.task.base.view
 
 import android.os.Bundle
+import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -17,11 +19,14 @@ abstract class BaseActivity<VM : BaseViewModel>(@LayoutRes private val layoutRes
         super.onCreate(savedInstanceState)
         setContentView(layoutRes)
         lifecycle.addObserver(viewModel)
+        initObservers()
     }
 
     abstract fun initViewModel(): VM
 
+    abstract fun initObservers()
+
     fun showError(error: String) {
-        Snackbar.make(findViewById(android.R.id.content), error, Snackbar.LENGTH_LONG).show()
+        Toast.makeText(baseContext,error,LENGTH_LONG).show()
     }
 }
