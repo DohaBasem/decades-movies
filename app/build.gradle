@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+
 }
 
 android {
@@ -74,6 +76,7 @@ dependencies {
     implementation Dependencies.retrofit
     implementation Dependencies.retrofit_rx_java3_adapter
     implementation Dependencies.retrofit_gson_converter
+    implementation Dependencies.okhttp_logging_interceptor
 
     //Navigation
     implementation Dependencies.navigation_fragment
@@ -84,6 +87,10 @@ dependencies {
     kapt Dependencies.room_annotation
     implementation Dependencies.room_ktx
     implementation Dependencies.room_rxjava3_support
+
+    //Glide
+    implementation Dependencies.glide
+    kapt Dependencies.glide_compiler
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

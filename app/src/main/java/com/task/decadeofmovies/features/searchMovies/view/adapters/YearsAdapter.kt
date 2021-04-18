@@ -1,14 +1,17 @@
-package com.task.decadeofmovies.features.searchMovies.view
+package com.task.decadeofmovies.features.searchMovies.view.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.task.decadeofmovies.features.searchMovies.view.viewholders.YearVH
 
 
 class YearsAdapter(private var items: MutableList<String> = mutableListOf()) :
     RecyclerView.Adapter<YearVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YearVH {
-        return YearVH.create(parent)
+        return YearVH.create(
+            parent
+        )
     }
 
     override fun onBindViewHolder(holder: YearVH, position: Int) {

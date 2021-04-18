@@ -5,16 +5,15 @@ import com.task.base.helpers.ISharedPreferenceHelper
 import com.task.decadeofmovies.common.db.dao.MoviesDao
 import com.task.decadeofmovies.common.db.entities.MovieItemEntity
 import com.task.decadeofmovies.common.mappers.MoviesResponseMapper
-import com.task.decadeofmovies.common.network.response.MoviesResponse
 import com.task.decadeofmovies.common.network.apis.MoviesApi
-import com.task.decadeofmovies.common.network.response.MovieItemResponse
+import com.task.decadeofmovies.common.repos.interfaces.IMoviesRepo
 import io.reactivex.rxjava3.core.Single
 
 class MoviesRepo(
     private val moviesApi: MoviesApi,
     private val moviesDao: MoviesDao,
     private val sharedPreferenceHelper: ISharedPreferenceHelper
-): IMoviesRepo {
+) : IMoviesRepo {
 
     /*The source for the movies listing will be always the local db, so if the db is empty because
      the list has not been fetched remotely before, then it is fetched remotely first and saved to db
@@ -33,7 +32,7 @@ class MoviesRepo(
                     return@map entity
                 }
                 moviesDao.saveMoviesLocally(list).doOnComplete {
-                    sharedPreferenceHelper.saveBoolean(MOVIES_FIRST_TIME_LOADING,false)
+                    sharedPreferenceHelper.saveBoolean(MOVIES_FIRST_TIME_LOADING, false)
                 }.andThen(
                     moviesDao.getAllMovies()
                 )
@@ -49,7 +48,12 @@ class MoviesRepo(
         return moviesDao.getMoviesWithFilter(year)
     }
 
-    override fun fetchMoviesDistinctYears():LiveData<List<String>> = moviesDao.getDistinctMoviesYears()
+    override fun fetchMoviesDistinctYears(): LiveData<List<String>> =
+        moviesDao.getDistinctMoviesYears()
+
+    override fun getMovieDetails(movieId: Int): Single<MovieItemEntity> {
+        return moviesDao.getMovieDetail(movieId)
+    }
 
     companion object {
         const val MOVIES_FIRST_TIME_LOADING = "movies_first_time_loading"

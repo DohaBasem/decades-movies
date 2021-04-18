@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder
 import com.task.decadeofmovies.BuildConfig
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -19,6 +20,7 @@ class RetrofitClient: IRetrofitClient {
             .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
             .writeTimeout(TIME_OUT, TimeUnit.SECONDS)
             .readTimeout(TIME_OUT, TimeUnit.SECONDS)
+           .addInterceptor(getOkHttpLoggingInterceptor())
     }
 
     private fun getGsonConverter(): GsonConverterFactory{
@@ -31,13 +33,19 @@ class RetrofitClient: IRetrofitClient {
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(getGsonConverter())
             .client(getOkHttpBuilder().build())
-            retrofitBuilder.addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        retrofitBuilder.addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         return retrofitBuilder
     }
 
     fun buildRetrofit(): RetrofitClient {
         retrofit = this.getRetrofitBuilder().build()
         return this
+    }
+
+    private fun getOkHttpLoggingInterceptor(): HttpLoggingInterceptor {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        return loggingInterceptor
     }
 
     override fun <APIsInterface> getRetrofitClient(restAPIsInterface: Class<APIsInterface>): APIsInterface {
