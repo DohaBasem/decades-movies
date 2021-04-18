@@ -21,4 +21,7 @@ interface MoviesDao {
 
     @Query("SELECT DISTINCT year FROM MovieItemEntity ")
     fun getDistinctMoviesYears(): LiveData<List<String>>
+
+    @Query("SELECT * FROM MovieItemEntity WHERE id=:movieId")
+    fun getMovieDetail(movieId: Int): Single<MovieItemEntity>
 }

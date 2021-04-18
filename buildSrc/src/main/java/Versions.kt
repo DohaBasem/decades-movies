@@ -15,6 +15,5 @@ object Versions {
     const val retrofit = "2.9.0"
     const val okhttp = "4.9.0"
     const val room = "2.3.0-alpha02" //This alpha version for room is used to support rxJava3
-
-
+    const val glide = "4.11.0"
 }

@@ -1,4 +1,4 @@
-package com.task.decadeofmovies.features.searchMovies.view
+package com.task.decadeofmovies.features.searchMovies.view.viewholders
 
 import android.view.LayoutInflater
 import android.view.View
@@ -16,9 +16,11 @@ class YearVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     companion object {
-        fun create(parent: ViewGroup): YearVH{
-            return YearVH(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_year, parent, false))
+        fun create(parent: ViewGroup): YearVH {
+            return YearVH(
+                LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.item_year, parent, false)
+            )
         }
     }
 }

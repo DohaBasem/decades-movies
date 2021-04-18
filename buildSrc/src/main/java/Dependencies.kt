@@ -14,10 +14,14 @@ object Dependencies {
     const val retrofit_rx_java3_adapter =
         "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
     const val retrofit_gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val okhttp_logging_interceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
 
     //Navigation
     const val navigation_fragment = "androidx.navigation:navigation-fragment-ktx:2.3.5"
     const val navigation_ui = "androidx.navigation:navigation-ui-ktx:2.3.5"
+    const val navigation_safe_args =
+        "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
 
     //Room dependencies
     const val room = "androidx.room:room-runtime:${Versions.room}"
@@ -25,5 +29,9 @@ object Dependencies {
     const val room_ktx = "androidx.room:room-ktx:${Versions.room}"
     const val room_rxjava3_support = "androidx.room:room-rxjava3:${Versions.room}"
     const val room_test_helper = "androidx.room:room-testing:${Versions.room}"
+
+    //Image loading dependencies
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 
 }

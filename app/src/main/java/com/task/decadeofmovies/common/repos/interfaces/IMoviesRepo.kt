@@ -1,4 +1,4 @@
-package com.task.decadeofmovies.common.repos
+package com.task.decadeofmovies.common.repos.interfaces
 
 import androidx.lifecycle.LiveData
 import com.task.decadeofmovies.common.db.entities.MovieItemEntity
@@ -8,4 +8,5 @@ interface IMoviesRepo{
     fun fetchAllMovies(): Single<List<MovieItemEntity>>
     fun filterMovies(year: String): Single<List<MovieItemEntity>>
     fun fetchMoviesDistinctYears(): LiveData<List<String>>
+    fun getMovieDetails(movieId: Int): Single<MovieItemEntity>
 }

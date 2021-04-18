@@ -7,6 +7,25 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.task.decadeofmovies.features.searchMovies.view.SearchFragment"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_from_movie_listing_to_details"
+            app:destination="@id/moviedetailsFragment">
+            <argument android:name="movieId"
+                app:argType="integer"/>
+            <argument android:name="movieName"
+                app:argType="string"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviedetailsFragment"
+        android:name="com.task.decadeofmovies.features.movieDetails.MovieDetailsFragment"
+        tools:layout="@layout/fragment_movie_details">
+        <argument android:name="movieId"
+            app:argType="integer"/>
+        <argument android:name="movieName"
+            app:argType="string"/>
+    </fragment>
 
 </navigation>

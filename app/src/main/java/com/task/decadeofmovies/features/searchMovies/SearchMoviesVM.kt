@@ -7,13 +7,9 @@ import androidx.lifecycle.OnLifecycleEvent
 import com.task.base.helpers.ILoggingHelper
 import com.task.base.helpers.ISchedulerHelper
 import com.task.base.viewModel.BaseViewModel
-import com.task.decadeofmovies.common.db.entities.MovieItemEntity
-import com.task.decadeofmovies.common.mappers.MovieUIModelMapper
 import com.task.decadeofmovies.common.mappers.SuccessViewStateMapper
-import com.task.decadeofmovies.common.repos.IMoviesRepo
-import com.task.decadeofmovies.common.repos.MoviesRepo
+import com.task.decadeofmovies.common.repos.interfaces.IMoviesRepo
 import com.task.decadeofmovies.common.utils.rx.addTo
-import com.task.decadeofmovies.features.searchMovies.uiModels.Movie
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.koin.core.KoinComponent
 import org.koin.core.inject
