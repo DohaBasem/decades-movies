@@ -12,4 +12,17 @@ data class MovieItemEntity(
     val rating: Int,
     val cast: List<String>?,
     val generes: List<String>?
-)
+){
+    companion object{
+        fun createItemForTesting():MovieItemEntity{
+            return MovieItemEntity(
+                id = 0,
+                title = "Movie",
+                year = "2010",
+                rating = 5,
+                cast = emptyList(),
+                generes = emptyList()
+            )
+        }
+    }
+}
