@@ -6,4 +6,10 @@ data class MovieItemResponse(
     val cast: List<String>,
     val genres: List<String>,
     val rating: Int
-)
+){
+    companion object{
+        fun createForTesting():MovieItemResponse{
+            return MovieItemResponse(title = "title",year = "year",cast = listOf(),genres = listOf(),rating = 5)
+        }
+    }
+}
