@@ -36,11 +36,13 @@ android {
         }
         staging {
             dimension "serverMode"
+            applicationIdSuffix '.staging'
             resValue "string", "app_name", "DecadeOfMovies(staging)"
             buildConfigField("String", "BASE_URL", "\"\"")
         }
         production {
             dimension "serverMode"
+            applicationIdSuffix '.production'
             resValue "string", "app_name", "DecadeOfMovies"
             buildConfigField("String", "BASE_URL", "\"\"")
         }
