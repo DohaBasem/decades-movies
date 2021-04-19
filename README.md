@@ -25,6 +25,10 @@ taken from the develop branch.  After the feature branch is ready, all commits a
 
 ![List_Loading_Flow](https://user-images.githubusercontent.com/6968550/115269037-33da0280-a13b-11eb-90ed-76878f85178b.png)
 
+## Deliverables
+[Demo Video](https://drive.google.com/file/d/10hYEZ3HjuyRRVOvrHru1ThbDH22NqVcx/view?usp=sharing)
+[Apk Link](https://drive.google.com/file/d/10hYEZ3HjuyRRVOvrHru1ThbDH22NqVcx/view?usp=sharing)
+
 ## Libraries used
 * Koin for dependency injection
 * Glide for image loading
