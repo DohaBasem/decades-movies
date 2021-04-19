@@ -24,3 +24,12 @@ taken from the develop branch.  After the feature branch is ready, all commits a
 * Caching Flow for movies
 
 ![List_Loading_Flow](https://user-images.githubusercontent.com/6968550/115269037-33da0280-a13b-11eb-90ed-76878f85178b.png)
+
+## Libraries used
+* Koin for dependency injection
+* Glide for image loading
+* Mockkito for unit tests
+* RxJava3
+* Retrofit
+* Room
+* Navigation Component
