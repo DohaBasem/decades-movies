@@ -18,3 +18,9 @@ taken from the develop branch.  After the feature branch is ready, all commits a
 ## Code structure
 * The used architectural pattern is MVVM
 * The app module depends on the baseArchitecture module which includes base classes that contains the minimal setup to implement the MVVM architecture pattern, and the interafces for the helpers required by the app such as the (loggingHelper, SchedularHelper, SerializationHelper, ...) which are then implemented in the main app module. This baseArchitecture module is portable unrelated to any of the detials of the app itself
+
+## UML Diagrams
+
+* Caching Flow for movies
+
+![List_Loading_Flow](https://user-images.githubusercontent.com/6968550/115269037-33da0280-a13b-11eb-90ed-76878f85178b.png)
