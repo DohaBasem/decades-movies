@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="50dp"
-    android:layout_height="30dp"
-    android:id="@+id/tv_year"/>
+    android:layout_height="50dp"
+    android:id="@+id/tv_year"
+    android:background="@drawable/bg_year_item"
+    android:layout_margin="8dp"
+    android:gravity="center"
+    android:textColor="@color/grey_1"
+    />
 

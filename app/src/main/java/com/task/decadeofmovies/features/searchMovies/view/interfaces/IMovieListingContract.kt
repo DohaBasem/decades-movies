@@ -7,4 +7,5 @@ interface MovieListingContract {
     fun showAllMovies(movies: List<Movie>)
     fun showErrorLoadingMovies()
     fun showNoMoviesAvailable()
+    fun handleYearSelection(year: String, itemPosition: Int)
 }

@@ -1,0 +1,45 @@
+<androidx.constraintlayout.motion.widget.MotionLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layoutDescription="@xml/scene_movies_listing"
+    android:background="@color/white_PC"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_years"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:spanCount="4"
+        tools:listitem="@layout/item_year"/>
+
+    <TextView
+        android:id="@+id/tv_year_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_years"
+        android:background="@color/white_PC"
+        android:textAppearance="@style/HeaderTextStyle"
+        android:text="@string/all_movies"
+        tools:text="2009" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_movies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_year_lbl"
+        app:spanCount="2"
+        tools:listitem="@layout/item_movie"
+        android:background="@color/white_PC"/>
+</androidx.constraintlayout.motion.widget.MotionLayout>

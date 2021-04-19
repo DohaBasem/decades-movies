@@ -19,4 +19,6 @@ object Versions {
     const val mockito = "3.5.13"
     const val mockito_inline = "2.13.0"
     const val arch_core_testing = "1.1.1"
+    const val recycler_view = "1.2.0-beta01"
+
 }

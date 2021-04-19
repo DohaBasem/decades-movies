@@ -34,11 +34,14 @@ object Dependencies {
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 
-    //Testing
     //Testing dependencies
     const val mockito = "org.mockito:mockito-core:${Versions.mockito}"
     const val mockito_inline = "org.mockito:mockito-inline:${Versions.mockito_inline}"
     const val arch_core_testing = "android.arch.core:core-testing:${Versions.arch_core_testing}"
     const val koin_test = "org.koin:koin-test:${Versions.koin_core}"
+
+    //View
+    const val recycler_view = "androidx.recyclerview:recyclerview:${Versions.recycler_view}"
+
 
 }

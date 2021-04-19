@@ -11,7 +11,7 @@ import com.task.decadeofmovies.common.db.entities.MovieItemEntity
     entities = [
         MovieItemEntity::class
     ],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(StringListConverter::class)
