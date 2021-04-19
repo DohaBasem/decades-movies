@@ -33,13 +33,6 @@ class TextAdapter(private val textType: TextType) :
     override fun onBindViewHolder(holder: TextVH, position: Int) {
         holder.bind(getItem(position))
     }
-
-    override fun getItemViewType(position: Int): Int {
-        return when(textType){
-            TextType.HEADER -> R.layout.item_header
-            TextType.SIMPLE_TEXT -> R.layout.item_simple_text
-        }
-    }
 }
 
 enum class TextType {

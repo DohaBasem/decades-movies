@@ -13,7 +13,7 @@ class MovieVH(itemView: View, private val movieItemClickListener: MovieItemClick
     fun bind(item: Movie){
         with(itemView){
             tv_rating.text = item.rating.toString()
-            tv_movie_title.text = item.title
+            tv_movie_title.text = "${item.title} (${item.year})"
             setOnClickListener {
                 movieItemClickListener.onMovieClicked(item.id,item.title)
             }

@@ -23,7 +23,4 @@ class CastAdapter : ListAdapter<String, CastVH>(object : DiffUtil.ItemCallback<S
         holder.bind(currentList[position])
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return R.layout.item_cast
-    }
 }

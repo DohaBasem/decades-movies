@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.task.base.helpers.IPhotoLoadingHelper
 import com.task.decadeofmovies.R
-import com.task.decadeofmovies.common.helpers.PhotoLoadingHelper
-import com.task.decadeofmovies.features.movieDetails.uiModels.Image
 import kotlinx.android.synthetic.main.item_image.view.*
 import org.koin.core.KoinComponent
 import org.koin.core.inject

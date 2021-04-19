@@ -7,12 +7,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
+import com.task.base.helpers.ILoggingHelper
 import com.task.base.view.BaseFragment
 import com.task.decadeofmovies.R
 import com.task.decadeofmovies.features.movieDetails.adapters.*
 import com.task.decadeofmovies.features.movieDetails.interfaces.MovieDetailsViewContract
 import com.task.decadeofmovies.features.movieDetails.uiModels.MovieDetails
 import kotlinx.android.synthetic.main.fragment_movie_details.*
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 class MovieDetailsFragment(layoutRes: Int = R.layout.fragment_movie_details) :
@@ -29,6 +31,8 @@ class MovieDetailsFragment(layoutRes: Int = R.layout.fragment_movie_details) :
     private val mainAdapter =
         ConcatAdapter(movieGeneralDetailsAdapter, castAdapter, genereAdapter, imagesAdapter)
 
+    private val loggerHelper: ILoggingHelper by inject()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.loadMovieDetails(args.movieId, args.movieName)
@@ -39,8 +43,9 @@ class MovieDetailsFragment(layoutRes: Int = R.layout.fragment_movie_details) :
         val layoutManager = GridLayoutManager(context, 2)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
-                return when (position) {
-                    0 -> 2
+                loggerHelper.logMessage("itemViewType","viewType ${mainAdapter.getItemViewType(position)} for pos ${position}")
+                return when (mainAdapter.getItemViewType(position)) {
+                    0,2 -> 2
                     else -> 1
                 }
             }
