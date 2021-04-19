@@ -14,3 +14,7 @@ This is a sample app, for listing movies, categorizing them and showing there de
 ## Git Flow
 The **develop** branch was taken initially from the **main**, then each feature or enhancement is done in a separate branch
 taken from the develop branch.  After the feature branch is ready, all commits are squashed into a single commit and the feature branch is rebased on top of the develop , and then merged into the develop.
+
+## Code structure
+* The used architectural pattern is MVVM
+* The app module depends on the baseArchitecture module which includes base classes that contains the minimal setup to implement the MVVM architecture pattern, and the interafces for the helpers required by the app such as the (loggingHelper, SchedularHelper, SerializationHelper, ...) which are then implemented in the main app module. This baseArchitecture module is portable unrelated to any of the detials of the app itself
