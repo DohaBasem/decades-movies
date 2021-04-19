@@ -27,7 +27,7 @@ taken from the develop branch.  After the feature branch is ready, all commits a
 
 ## Deliverables
 * [Demo Video](https://drive.google.com/file/d/10hYEZ3HjuyRRVOvrHru1ThbDH22NqVcx/view?usp=sharing). 
-* [Apk Link](https://drive.google.com/file/d/10hYEZ3HjuyRRVOvrHru1ThbDH22NqVcx/view?usp=sharing). 
+* [Apk Link](https://drive.google.com/file/d/1wf5xT7wOF1MB-woI0TU6072pKWW5Uukx/view?usp=sharing). 
 
 ## Libraries used
 * Koin for dependency injection
