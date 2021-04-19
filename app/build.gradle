@@ -98,6 +98,9 @@ dependencies {
     testImplementation Dependencies.arch_core_testing
     testImplementation Dependencies.room_test_helper
     testImplementation Dependencies.koin_test
+
+    //View
+    implementation Dependencies.recycler_view
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

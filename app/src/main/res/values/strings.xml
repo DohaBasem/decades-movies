@@ -1,3 +1,5 @@
 <resources>
     <string name="msg_error">An error has occurred</string>
+    <string name="all_movies">All Movies</string>
+    <string name="format_details_format">Movie Name: %s\nRating: %s\nYear: %s</string>
 </resources>
