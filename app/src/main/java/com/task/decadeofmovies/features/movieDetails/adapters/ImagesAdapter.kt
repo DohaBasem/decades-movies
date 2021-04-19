@@ -25,8 +25,4 @@ class ImagesAdapter :
     override fun onBindViewHolder(holder: ImageVH, position: Int) {
         holder.bind(getItem(position))
     }
-
-    override fun getItemViewType(position: Int): Int {
-        return R.layout.item_image
-    }
 }

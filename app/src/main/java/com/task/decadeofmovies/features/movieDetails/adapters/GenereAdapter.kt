@@ -23,7 +23,4 @@ class GenereAdapter : ListAdapter<String, GenereVH>(object : DiffUtil.ItemCallba
         holder.bind(currentList[position])
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return R.layout.item_genere
-    }
 }
